@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Student Dashboard </title>
+  <link rel="stylesheet" href="student_profile.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="header">
+       <a href="#" class="logo">SORA TECH</a>
+    </div>
+    <ul class="navbar-menu">
+      <li onclick="loadPage('announcements.html')">Announcements</li>
+      <li onclick="loadPage()">Internships</li>
+      <li onclick="loadPage()">Progress</li>
+      <li onclick="loadPage('Task.html')">Tasks</li>
+      <li onclick="loadPage()">Profile setting</li>
+      
+    </ul>
+  <button class="btn" onclick="logout()">Log out</button>
+
+  </nav>
+  <div class="main-content" id = content-area>
+    <h1>Welcome MD FAZLA RABBI TUHIN</h1>
+    <p>Heading towards success.</p>
+  </div>
+
+  <script>
+    
+    function loadPage(page) {
+      fetch(page)
+        .then(response => {
+          if (!response.ok) throw new Error("Page not found");
+          return response.text();
+        })
+        .then(data => {
+          document.getElementById("content-area").innerHTML = data;
+        })
+        .catch(error => {
+          document.getElementById("content-area").innerHTML =
+            "<p style='color:red;'>Error: Page not found.</p>";
+          console.error(error);
+        });
+    }
+
+    function logout() {
+      alert("You have been logged out!");
+      window.location.href = "home.html"; // change to your login page
+    }
+  </script>
+
+</body>
+</html>

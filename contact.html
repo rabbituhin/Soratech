@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Soratech</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+            <nav class="navbar">
+                <div class="nav-container">
+                    <!-- Logo -->
+                        <a href="home.html" class="logo"><img src="images/Soratech_logo.png" alt="Soratech_logo"></a>
+                    
+
+                    <!-- Desktop Navigation -->
+                    <ul class="nav-links">
+                        <li><a href="internship_listing.html">Explore Internships</a></li>
+                        <li><a href="interview.html">Interview Scheduling</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="auth.html">Login</a></li>
+                        <li><a href="auth.html" class="register-btn" id="nav-register-button">Register</a></li>
+                    </ul>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div class="mobile-menu" id="mobileMenu">
+                    <ul class="mobile-menu-list">
+                        <li><a href="internship_listing.html" class="mobile-link">Explore Internships</a></li>
+                        <li><a href="interview.html" class="mobile-link">Interview</a></li>
+                        <li><a href="contact.html" class="mobile-link">Contact</a></li>
+                        <li><a href="auth.html" class="mobile-link">Login</a></li>
+                        <li><a href="auth.html" class="register-btn-mobile mobile-link" onclick='register()'>Register</a></li>
+                    </ul>
+                </div>
+            </nav>
+    </header>
+    <section class="contact-section">
+        <div class="contact-header">
+            <h1>Get In Touch</h1>
+            <p>Have a question or want to work together? We'd love to hear from you.</p>
+        </div>
+
+        <div class="contact-container">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send us a message</h2>
+                
+                
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" maxlength="100" required placeholder="John Doe">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" maxlength="100" required placeholder="john@example.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" maxlength="100" required placeholder="How can we help?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" maxlength="100" required placeholder="Tell us more about your inquiry..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+
+
+                    <div class="success-message" id="successMessage" style="display: none;">
+                    Thank you! Your message has been sent successfully.
+                    </div>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+                <span>Feel free to reach out through any of these channels</span>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@soratech.com">info@soratech.com</a></p>
+                        <p><a href="mailto:support@soratech.com">support@soratech.com</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                        <p>Mon - Fri, 9AM - 6PM</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Office</h3>
+                        <p>123 Tech Street</p>
+                        <p>San Francisco, CA 94102</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.facebook.com/" class="social-link" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.twitter.com" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Footer section - Bottom of the website-->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-section">
+                    <h3>SORATECH</h3>
+                    <p>Connecting students with verified employers and managing every stage of your internship search journey.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.twitter.com" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Nav Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="internship_listing.html">Explore Internships</a></li>
+                        <li><a href="interview.html">Interview Scheduling</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="auth.html">Login</a></li>
+                        <li><a href="auth.html">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 SORATECH. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="home.js"></script>
+</body>
+</html>

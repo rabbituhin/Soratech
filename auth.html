@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soratech Signin</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+            <nav class="navbar">
+                <div class="nav-container">
+                    <!-- Logo -->
+                        <a href="home.html" class="logo"><img src="images/Soratech_logo.png" alt="Soratech_logo"></a>
+                    
+
+                    <!-- Desktop Navigation -->
+                    <ul class="nav-links">
+                        <li><a href="internship_listing.php">Explore Internships</a></li>
+                        <li><a href="interview.html">Interview Scheduling</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="auth.html">Login</a></li>
+                        <li><a href="auth.html" class="register-btn" id="nav-register-button">Register</a></li>
+                    </ul>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu -->
+                <div class="mobile-menu" id="mobileMenu">
+                    <ul class="mobile-menu-list">
+                        <li><a href="internship_listing.html" class="mobile-link">Explore Internships</a></li>
+                        <li><a href="interview.html">Interview Scheduling</a></li>
+                        <li><a href="contact.html" class="mobile-link">Contact</a></li>
+                        <li><a href="auth.html" class="mobile-link">Login</a></li>
+                        <li><a href="auth.html" class="register-btn-mobile mobile-link" onclick='register()'>Register</a></li>
+                    </ul>
+                </div>
+            </nav>
+    </header>
+    <main id="main-section">
+        <div id='auth-container' class='login-page'>
+            
+            <div class='form-box'>
+                <!-- <h3>Create or Sign into your account</h3> -->
+                <div class='toggle-button-box'>
+                    
+                    <!-- Empty Div for toggle button movement -->
+                    <div id='button'></div> 
+                    <button type='button' onclick='login()' class='toggle-button'>Log In</button>
+                    <button type='button' onclick='register()' class='toggle-button'>Register</button>
+                </div>
+            
+            
+                <form id="login" class="input-group-login" autocomplete="on" method="POST" action="login.php">
+    <h3>Welcome Back!</h3>
+<label for="loginEmail">Email Address *</label>
+<input 
+    type="email" 
+    class="input-field" 
+    placeholder="Enter Email Address" 
+    id="loginEmail"
+    name="email"
+    maxlength="254"
+    autocomplete="email"
+    required
+>
+
+<label for="loginPassword">Password *</label>
+<div class="password-input-wrapper">
+    <input 
+        type="password" 
+        class="password-input" 
+        placeholder="Enter Password" 
+        id="loginPassword"
+        name="password"
+        autocomplete="current-password"
+        required
+    >
+    <button type="button" class="toggle-password" id="togglePassword">
+        <i class="far fa-eye"></i>
+    </button>
+</div>
+
+<a href="forgot_password.html">Forgot Password?</a>
+<br>
+<p>Don't have an account? <a href="#" onclick="register()">Register Here</a></p>
+
+<!-- Submit button: must be type="submit" -->
+<button type="submit" class="submit-button2">Login</button>
+
+</form>
+
+</form>
+
+
+
+
+                <!-- Register form -->
+                    <form method="POST" action="register.php" id="register" class="input-group-register" autocomplete="on">
+
+                        <label for="first_name">First Name *</label>
+                        <input 
+                            type="text"
+                            class="input-field"
+                            placeholder="First Name"
+                            autocomplete="given-name"
+                            id="first_name"
+                            name="first_name"
+                            minlength="2"
+                            maxlength="100"
+                            required
+                        >
+
+                        <label for="last_name">Last Name *</label>
+                        <input 
+                            type="text"
+                            class="input-field"
+                            placeholder="Last Name"
+                            autocomplete="family-name"
+                            id="last_name"
+                            name="last_name"
+                            minlength="2"
+                            maxlength="100"
+                            required
+                        >
+
+                        <label for="email">Email *</label>
+                        <input 
+                            type="email"
+                            class="input-field"
+                            placeholder="Enter Email Address"
+                            autocomplete="email"
+                            id="email"
+                            name="email"
+                            maxlength="254"
+                            required
+                        >
+
+                        <label for="tel">Phone Number</label>
+                        <input 
+                            type="tel"
+                            class="input-field"
+                            placeholder="0123456789"
+                            id="tel"
+                            name="phone"
+                            maxlength="15"
+                            autocomplete="tel"
+                        >
+
+                        <label for="password">Password *</label>
+                        <div class="password-input-wrapper">
+                            <input 
+                                type="password"
+                                id="password"
+                                name="password"
+                                class="password-input"
+                                placeholder="Enter your password"
+                                autocomplete="new-password"
+                                minlength="8"
+                                required
+                            >
+                            <button type="button" class="toggle-password" id="togglePassword">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <div class="password-input-wrapper">
+                            <input 
+                                type="password"
+                                id="confirmPassword"
+                                name="confirm_password"
+                                class="input-field"
+                                placeholder="Confirm Password"
+                                autocomplete="new-password"
+                                minlength="8"
+                                maxlength="100"
+                                required
+                            >
+                            <button type="button" class="toggle-password-btn" id="toggleConfirmPassword">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                                        
+                        <p>Choose your role:</p>
+                        <input type="radio" id="Student" name="role" value="Student" required>
+                        <label for="Student">Student</label><br>
+
+                        <input type="radio" id="Employer" name="role" value="Employer">
+                        <label for="Employer">Employer</label><br>
+
+                        <input type="checkbox" class="check-box" name="terms" required>
+                        <span id="terms">I agree to the terms and agreement conditions</span>
+
+                        <button type="submit" class="submit-button" id="submitBtn">Register</button>
+                    </form>
+
+            </div>
+            
+    </main>
+    <!--Footer section - Bottom of the website-->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-section">
+                    <h3>SORATECH</h3>
+                    <p>Connecting students with verified employers and managing every stage of your internship search journey.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.twitter.com" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.instagram.com" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Nav Links -->
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="internship_listing.html">Explore Internships</a></li>
+                        <li><a href="interview.html">Interview Scheduling</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="auth.html">Login</a></li>
+                        <li><a href="auth.html">Register</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 SORATECH. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#terms">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="auth.js"></script>
+    <script src="home.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,240 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Color Variables using the DRY(Don't Repeat Yourself) Principle */
+
+:root {
+  --primary-color: #0bb280;
+  --secondary-color: #0a2540;
+  --accent-color: #bffcea;
+  --text-color: #ffffff;
+  --background-color: #fff;
+}
+
+ /* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none; 
+}
+
+/* Headings */
+h1{
+    font-size: clamp(2rem, calc(4vw + 1rem), 3rem);
+    margin: 3% 0;
+    color: var(--primary-color);
+}
+
+h2{
+    font-size: clamp(1.5rem, calc(3vw + 1rem), 2rem);
+    margin: 3% 0;
+    
+}
+h3{
+    font-size: clamp(1rem, calc(2vw + 1rem), 1rem);
+    margin: 1% 0;
+}
+
+/* Paragraph */
+p {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  line-height: 1.5;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+/* ----------------------------------------------------------------------------------------------------------- */
+
+
+.contact-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+.contact-header {
+    text-align: center;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Contact us form */
+.contact-form {
+    padding: 50px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(11, 178, 128, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: #099970;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(11, 178, 128, 0.3);
+}
+
+/* Contact Informations */
+.contact-info {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #099970 100%);
+    padding: 50px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contact-info h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 30px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.info-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.info-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.info-content p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.info-content a {
+    color: white;
+    text-decoration: none;
+}
+
+.info-content a:hover {
+    opacity: 0.8;
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.social-link:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form,
+    .contact-info {
+        padding: 30px;
+    }
+
+    .contact-section {
+        margin: 20px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form,
+    .contact-info {
+        padding: 20px;
+    }
+}
+
+/* Success message section */
+.success-message {
+    display: none;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb;
+}
